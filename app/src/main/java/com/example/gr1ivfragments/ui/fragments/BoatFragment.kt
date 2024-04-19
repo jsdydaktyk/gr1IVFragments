@@ -22,7 +22,7 @@ class BoatFragment : Fragment() {
         R.drawable.test_lemon,
         R.drawable.test_strawberry,
         R.drawable.test_watermelon
-    )
+    )    
 
     override fun onCreateView(
         inflater: LayoutInflater,
