@@ -16,6 +16,7 @@ class DetailsFragment : Fragment() {
             DetailsFragment().apply {
                 arguments = Bundle().apply {
                         putInt("imageId", imageId)
+
                 }
             }
     }
