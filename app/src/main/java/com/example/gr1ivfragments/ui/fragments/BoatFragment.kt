@@ -11,9 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.gr1ivfragments.R
 import com.example.gr1ivfragments.adapters.ImagesGridAdapter
+import com.example.gr1ivfragments.adapters.OnImageClickListener
 import com.example.gr1ivfragments.viewmodel.SharedViewModel
 
-class BoatFragment : Fragment() {
+class BoatFragment : Fragment(), OnImageClickListener {
 
     private val viewModel: SharedViewModel by activityViewModels()
     private val listOfImages = listOf(
@@ -22,7 +23,7 @@ class BoatFragment : Fragment() {
         R.drawable.test_lemon,
         R.drawable.test_strawberry,
         R.drawable.test_watermelon
-    )    
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +45,16 @@ class BoatFragment : Fragment() {
         }
 
         val gridView: GridView = view.findViewById(R.id.gridView_fruits)
-        gridView.adapter = ImagesGridAdapter(requireContext(),listOfImages)
+        gridView.adapter = ImagesGridAdapter(requireContext(),listOfImages, this)
+
+    }
+
+    override fun onImageClick(imageId: Int) {
+        val detailsFragment: DetailsFragment = DetailsFragment.newInstance(imageId)
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.welcome_fragment_container,detailsFragment)
+            ?.addToBackStack(null)
+            ?.commit()
 
     }
 }
