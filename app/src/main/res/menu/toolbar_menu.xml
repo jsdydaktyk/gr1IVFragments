@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/home_icon"
+            android:icon="@drawable/baseline_home_24"
+            app:showAsAction="ifRoom"
+            android:title="home icon" />
+    <item
+        android:id="@+id/contact_icon"
+        android:icon="@drawable/baseline_import_contacts_24"
+        app:showAsAction="ifRoom"
+        android:title="contact icon" />
+    <item
+        android:id="@+id/boat_icon"
+        android:icon="@drawable/baseline_directions_boat_24"
+        app:showAsAction="ifRoom"
+        android:title="home boat" />
+</menu>
